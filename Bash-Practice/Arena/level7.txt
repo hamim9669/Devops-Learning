@@ -1,0 +1,12 @@
+#!/bin/bash
+
+file="$1"
+
+if [ -f "$file" ]; then
+wc -l "$file"
+
+else 
+
+echo "no file provided"
+
+fi

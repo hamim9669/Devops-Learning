@@ -1,0 +1,27 @@
+#!/bin/bash
+
+mkdir -p Battlefield
+
+touch Battlefield/knight.txt 
+touch Battlefield/sorcerer.txt
+touch Battlefield/rogue.txt
+
+if [ -f Battlefield/knight.txt ]; then
+
+mkdir -p Archive
+
+mv Battlefield/knight.txt Archive
+
+else
+
+echo "knight not found"
+
+fi
+
+echo "content of Battlefield"
+
+ls Battlefield
+
+echo "content of Archive"
+
+ls Archive

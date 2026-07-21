@@ -1,0 +1,18 @@
+{
+  "files.enableTrash": false,
+  "editor.autoSave": "on",
+  "editor.formatOnSave": false,
+  "problems.decorations.tabbar.enabled": false,
+  "problems.autoReveal": false,
+  "preview.openByDefault": true,
+  "workbench.colorTheme": "dark",
+  "window.menuBarVisibility": "hidden",
+  "editor.suggest.hideStatusBar": false,
+  "workbench.statusBar.visible": false,
+  "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/filesystem**": true
+  }
+}

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+mkdir -p Battlefield2
+
+touch Battlefield2/knight.txt
+touch Battlefield2/sorcerer.txt
+touch Battlefield2/rogue.txt
+
+if [ -f Battlefield2/knight.txt ]
+
+then
+
+echo "knight exits"
+
+mkdir -p  Archive
+
+mv Battlefield2/knight.txt Archive
+
+echo "knight has been moved to Archive"
+
+fi
+
+echo "contents of archive"
+
+ls Archive
+
+echo "contents of Battlefield"
+
+ls Battlefield2
