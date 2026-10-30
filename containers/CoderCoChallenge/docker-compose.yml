@@ -1,0 +1,40 @@
+services:
+  redis:
+    build: ./Redis
+    command: redis-server --save 60 1 --appendonly yes
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-net
+
+  flask-app:
+    build: ./flask-app
+    expose:
+      - "5000"
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - app-net
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - flask-app
+    networks:
+      - app-net
+
+volumes:
+  redis-data:
+
+networks:
+  app-net:
+    driver: bridge
