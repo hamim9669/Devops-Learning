@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hifz Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>Hifz Tracker</h1>
+    <section class="top">
+      <div class="ring">
+        <svg viewBox="0 0 120 120">
+          <circle class="track" cx="60" cy="60" r="52"></circle>
+          <circle id="bar" class="bar" cx="60" cy="60" r="52"></circle>
+        </svg>
+        <div class="ring-text"><span id="pct">0</span>%</div>
+      </div>
+      <div class="stats">
+        <p><strong id="ayahs">0</strong> / 6236 ayahs</p>
+        <p>Streak: <strong id="streak">0</strong> days</p>
+        <p><strong id="due">0</strong> due for revision</p>
+      </div>
+    </section>
+    <p class="hint">Tap a surah to log progress. Leave the box empty to log a revision.</p>
+    <section id="grid" class="grid"></section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
